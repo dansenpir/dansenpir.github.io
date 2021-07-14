@@ -3,13 +3,16 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Bikcraft - Produtos</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/grid.css">
+    <title>Bikcraft - Conheça as linhas Passeio, Retrô e Esporte</title>
+    <meta name="description" content="Compre sua bicicleta personalizada na Bikcraft. Possuímos modelos, Passeio, Retrô e Esporte.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Bikcraft - Conheça as linhas Passeio, Retrô e Esporte">
+    <meta property="og:description" content="Compre sua bicicleta personalizada na Bikcraft. Possuímos modelos, Passeio, Retrô e Esporte.">
+    <meta property="og:url" content="https://bikcraft.com/produtos.html">
+    <meta property="og:image" content="https://bikcraft.com/img/og-image.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="./favicon.ico">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/produtos.css">
-    <link rel="stylesheet" href="css/responsivo.css">
     <script>document.documentElement.classList.add("js")</script>
 </head>
 
@@ -43,7 +46,7 @@
             <img src="img/produtos/bikcraft-passeio-1.jpg" alt="Bikcraft Passeio">
             <h2>Passeio</h2>
         </div>
-        <div class="grid-5 produto_icone"><img src="img/produtos/passeio.svg"></div>
+        <div class="grid-5 produto_icone"><img src="img/produtos/passeio.svg" alt="Ícone Bikcraft Passeio"></div>
         <div class="grid-8"><img src="img/produtos/bikcraft-passeio-2.jpg" alt="Bikcraft Passeio"></div>
         <div class="grid-8 produto_info">
             <p>No mundo atual, a contínua expansão de nossa atividade cumpre um papel essencial na formula da gestão inovadora da qual fazemos parte inovadora da qual fazemos parte.</p>
@@ -61,7 +64,7 @@
             <img src="img/produtos/bikcraft-esporte-1.jpg" alt="Bikcraft Esporte">
             <h2>Esporte</h2>
         </div>
-        <div class="grid-5 produto_icone"><img src="img/produtos/esporte.svg"></div>
+        <div class="grid-5 produto_icone"><img src="img/produtos/esporte.svg" alt="Ícone Bikcraft Esporte"></div>
         <div class="grid-8"><img src="img/produtos/bikcraft-esporte-2.jpg" alt="Bikcraft Esporte"></div>
         <div class="grid-8 produto_info">
             <p>No mundo atual, a contínua expansão de nossa atividade cumpre um papel essencial na formula da gestão inovadora da qual fazemos parte inovadora da qual fazemos parte.</p>
@@ -79,7 +82,7 @@
             <img src="img/produtos/bikcraft-retro-1.jpg" alt="Bikcraft Retrô">
             <h2>Retrô</h2>
         </div>
-        <div class="grid-5 produto_icone"><img src="img/produtos/retro.svg"></div>
+        <div class="grid-5 produto_icone"><img src="img/produtos/retro.svg" alt="Ícone Bikcraft Retrô"></div>
         <div class="grid-8"><img src="img/produtos/bikcraft-retro-2.jpg" alt="Bikcraft Retrô"></div>
         <div class="grid-8 produto_info">
             <p>No mundo atual, a contínua expansão de nossa atividade cumpre um papel essencial na formula da gestão inovadora da qual fazemos parte inovadora da qual fazemos parte.</p>
@@ -95,17 +98,23 @@
     <section class="orcamento">
         <div class="container">
             <h2 class="subtitulo">Orçamento</h2>
-            <form id="form_orcamento" class="form grid-8">
+            <form id="form_orcamento" class="form grid-8 formphp">
                 <label for="nome">Nome *</label>
-                <input type="text" id="nome" placeholder="Qual o seu nome?" required>
+                <input type="text" id="nome" name="nome" placeholder="Qual o seu nome?" required>
                 <label for="email">E-mail *</label>
-                <input type="email" id="email" placeholder="seu_email@email.com" required>
+                <input type="email" id="email" name="email" placeholder="seu_email@email.com" required>
                 <label for="telefone">Telefone *</label>
-                <input type="tel" id="telefone" placeholder="21932323232" pattern="[0-9]{11}" required>
-                <label for="espec">Especificações *</label>
-                <textarea id="espec" placeholder="Do que precisa?" required></textarea>
-                <button type="submit" class="btn">Enviar</button>
-            </form>
+                <input type="tel" id="telefone" name="telefone" placeholder="21932323232" pattern="[0-9]{11}" required>
+
+                <label class="nao-aparece">Se você não é um robô, deixe em branco.</label>
+                <input type="text" class="nao-aparece" name="leaveblank">
+                <label class="nao-aparece">Se você não é um robô, não mude este campo.</label>
+                <input type="text" class="nao-aparece" name="dontchange" value="http://">
+
+                <label for="mensagem">Mensagem *</label>
+                <textarea id="mensagem" name="mensagem" placeholder="Do que precisa?" required></textarea>
+                <button id="enviar" name="enviar" type="submit" class="btn">Enviar</button>
+            </form>"
             <div class="orcamento_dados grid-8">
                 <h3>Dados</h3>
                 <span>+55 21 93223 3232</span>
@@ -124,12 +133,12 @@
     </section>
 
 
-    <section class="quebra">
+    <div class="quebra">
         <blockquote class="quote-externo container">
             <p>“o verdadeiro segredo da felicidade está em ter um genuíno interesse por todos os detalhes da vida cotidiana.”</p>
             <cite>WILLIAM MORRIS</cite>
         </blockquote>
-    </section>
+    </div>
 
     <footer>
         <div class="footer">
@@ -137,7 +146,7 @@
 
                 <div class="grid-8 footer_historia">
                     <h3>Nossa História</h3>
-                    <p>O verdadeiro segredo da felicidade está em ter um genuíno interesse por todos os detalhes da vida cotidiana cotidiana. interesse por todos os detalhes da vida cotidiana cotidiana.</p>
+                    <p>Quando iniciamos a Bikcraft queríamos apenas um produto que adoraríamos utilizar. Somos apaixonados por pedalar e também por fazer as coisas com as nossas próprias mãos. Assim surgiu um sonho na garagem da nossa casa.</p>
                 </div>
 
                 <div class="grid-4 footer_contato">
@@ -152,9 +161,9 @@
                 <div class="grid-4 footer_redes">
                     <h3>Contato</h3>
                     <ul>
-                        <li><a href="http://facebook.com" target="_blank"><img src="img/redes-sociais/facebook.svg"></a></li>
-                        <li><a href="http://instagram.com" target="_blank"><img src="img/redes-sociais/instagram.svg"></a></li>
-                        <li><a href="http://twitter.com" target="_blank"><img src="img/redes-sociais/twitter.svg"></a></li>
+                        <li><a href="http://facebook.com" target="_blank"><img src="img/redes-sociais/facebook.svg" alt="Facebook Bikcraft"></a></li>
+                        <li><a href="http://instagram.com" target="_blank"><img src="img/redes-sociais/instagram.svg" alt="Instagram Bikcraft"></a></li>
+                        <li><a href="http://twitter.com" target="_blank"><img src="img/redes-sociais/twitter.svg" alt="Twitter Bikcraft"></a></li>
                     </ul>
                 </div>
 
@@ -169,6 +178,7 @@
     </footer>
 
     <script src="./js/simple-anime.js"></script>
+    <script src="./js/simple-form.js"></script>
     <script src="./js/script.js"> </script>
 
 </body>
